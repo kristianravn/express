@@ -4,28 +4,20 @@ const app = express();
 
 app.use(express.json());
 
-
-const fakeDB = [];
-
 app.get("/books/allbooks",(request, response) =>{
     
-    response.send({message: "success", books: fakeDB});
+    response.send({message: "success"});
  });
 
 app.get("/books", (request, response) => {
-    const book = {
-        title: "esv bible",
-        author: "God",
-        genre: "history",
-    };
-    response.send({message: "success", book: book});
+  
+    response.send({message: "success"});
 
  });
 
 app.post("/books",(request,response) =>{
    
-    fakeDB.push(request.body);
-    response.send({message: '${request.body.title}has been added'});
+    response.send({message: "success"});
 });
 
 app.listen(5000,() =>{
