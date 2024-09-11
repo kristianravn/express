@@ -47,15 +47,21 @@ app.get("/books", (request, response) => {
 
  });
 
-app.post("/books/addbook", async (request,response) =>{
+// app.post("/books/addbook", async (request,response) =>{
 
-    const book = await Book.create({
-        title: request.body.title,
-        author: request.body.author,
-        genre: request.body.genre,
-    });
+//     const book = await Book.create({
+//         title: request.body.title,
+//         author: request.body.author,
+//         genre: request.body.genre,
+//     });
    
-    response.send({message: "success", book: book});
+//     response.send({message: "success", book: book});
+// });
+
+app.get("/books/getallbooks", async (request,response) => {
+    const books = await Book.find({});
+    
+    response.send({message: "success", allbooks: books});
 });
 
 app.listen(5000,() =>{
