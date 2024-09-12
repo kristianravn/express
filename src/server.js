@@ -20,49 +20,34 @@ app.use(bookRouter);
 
 // shows all books on the db
 
-app.get("/books/allbooks",(request, response) =>{
-    response.send({message: "success"});
- });
+// app.get("/books/allbooks", );
 
-app.get("/books", (request, response) => {
+// app.get("/books", (request, response) => {
   
-    response.send({message: "success"});
+//     response.send({message: "success"});
 
- });
+//  });
 
 
 // get all books on the db
 
-app.get("/books/getallbooks", async (request,response) => {
-    const books = await Book.find({});
-    
-    response.send({message: "success", allbooks: books});
-});
+
 
 // delete one book by title
 
-app.delete("/books/deletebookbytitle", async (request,response) => {
-   const books = await Book.deleteOne({
-        title: request.body.title,
 
-   
-   });
-
-   response.send ({message: "success", deletebookbytitle: books})
-
-});
 
 
 // updating a document on db (a book) filter book by title
 
-app.put ("/books/updatebookbyauthor", async(request,response) =>{
-    const books = await Book.updatebook({
-        title: request.body.title,
-
+// app.put ("/books/updatebookbyauthor", async(request,response) =>{
+//     const books = await Book.findOneAndUpdate({
+//         title: request.body.title},
+//         {author: request.body.author
    
-   });
-   response.send ({message: "success", updatebookbyauthor: books})
-})
+//    });
+//    response.send ({message: "success", updateBookByAuthor: author});
+// });
 
 
 
