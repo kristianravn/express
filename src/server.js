@@ -18,7 +18,7 @@ app.use(bookRouter);
 
 
 
-
+// shows all books on the db
 
 app.get("/books/allbooks",(request, response) =>{
     response.send({message: "success"});
@@ -31,6 +31,7 @@ app.get("/books", (request, response) => {
  });
 
 
+// get all books on the db
 
 app.get("/books/getallbooks", async (request,response) => {
     const books = await Book.find({});
