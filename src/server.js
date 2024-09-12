@@ -88,7 +88,7 @@ app.put ("/books/updatebookbyauthor", async(request,response) =>{
 
    
    });
-   response.send ({message: "success", updatebook: books})
+   response.send ({message: "success", updatebookbyauthor: books})
 })
 
 
