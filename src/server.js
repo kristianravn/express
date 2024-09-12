@@ -6,13 +6,15 @@ const connection = require("./db/connection");
 
 const Book = require("./books/model") 
 
+const bookRouter = require("./books/routes")
+
 const app = express();
 
 app.use(express.json());
 
 connection();
 
-
+app.use(bookRouter);
 
 
 
@@ -28,18 +30,7 @@ app.get("/books", (request, response) => {
 
  });
 
-// add book with title,author,genre
 
-app.post("/books/addbook", async (request,response) =>{
-
-    const book = await Book.create({
-        title: request.body.title,
-        author: request.body.author,
-        genre: request.body.genre,
-    });
-   
-    response.send({message: "success", book: book});
-});
 
 app.get("/books/getallbooks", async (request,response) => {
     const books = await Book.find({});
