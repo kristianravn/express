@@ -38,14 +38,9 @@ const deleteBookByTitle = async (request,response) => {
    
    };
    
-// find book and replace 
-   const findAndReplace = async (request, response) => {
-    const title = await Book.findOneAndReplace ({title: request.body.title}); 
-    ({title:request.body.newtitle, author:request.body.author,genre:request.body.genre});
+x
 
-    response.send ({message: "success",findAndReplace: title});
-
-   };
+   
 
 module.exports = {
     addBook: addBook,
